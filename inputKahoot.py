@@ -19,3 +19,18 @@ fixDF = fixDF.sort_values(by='NIM')
 fixDF.to_csv('Nilai Review.csv', index=False)
 
 print("selesai")
+
+
+# BUAT SPREADSHEET / EXCEL
+
+# =ARRAYFORMULA(
+#   LET(
+#     nim; TEXT(SEQUENCE(23; 1; 1); "000");
+#     usnPlayer; FILTER(Sheet1!B3:B; Sheet1!B3:B <> "");
+#     dataJawaban; FILTER(Sheet1!D3:D; Sheet1!B3:B <> "");
+#     reNIM; IFERROR(REGEXEXTRACT(usnPlayer; "\d{3}"));
+#     hLookup; VLOOKUP(nim; {reNIM\ dataJawaban}; 2; FALSE);
+#     {"NIM"\ "Correct Answers";
+#      nim\ IFERROR(hLookup; "Data tidak tersedia")}
+#   )
+# )
